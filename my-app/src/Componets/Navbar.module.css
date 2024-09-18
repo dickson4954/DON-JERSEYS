@@ -1,0 +1,116 @@
+/* Navbar.module.css */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff; /* White background for the navbar */
+  padding: 10px 15px; /* Reduced padding for a smaller navbar */
+  border-bottom: 1px solid #ddd; /* Light border for separation */
+  position: fixed; /* Fix the navbar to the top of the page */
+  width: 100%; /* Ensure the navbar spans the full width */
+  top: 0; /* Align the navbar to the top */
+  left: 0; /* Align the navbar to the left */
+  z-index: 1000; /* Ensure the navbar is on top */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000; /* Black text color for logo */
+}
+
+.logoIcon {
+  width: 80px; /* Reduced logo size */
+  height: 40px;
+  margin-right: 8px; /* Reduced space between logo image and text */
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  flex: 2; /* Flex-grow to take up more space */
+  gap: 8px; /* Reduced space between search input and button */
+}
+
+.searchBar {
+  flex: 1; /* Make the search bar expand to fill available space */
+  padding: 8px; /* Reduced padding for a more compact search bar */
+  font-size: 16px; /* Smaller font size */
+  border: 1px solid #ccc; /* Light border for input */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.searchButton {
+  padding: 8px 15px;
+  font-size: 16px; /* Match the font size of the search bar */
+  background-color: #007bff; /* Primary button color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.help, .cart {
+  display: flex;
+  align-items: center;
+  margin-left: 15px; /* Reduced space between help and cart */
+  position: relative; /* Ensure dropdown positions relative to these elements */
+}
+
+.helpLink, .cartLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000; /* Black text color for help and cart links */
+}
+
+.helpIcon, .cartIcon {
+  width: 25px; /* Smaller icons */
+  height: 25px;
+  margin-right: 6px; /* Reduced space between icon and text */
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%; /* Position dropdown directly below the help link */
+  left: 0; /* Align dropdown with the left edge of the help link */
+  background-color: #fff; /* Background color for dropdown */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect for dropdown */
+  padding: 8px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000; /* Ensure dropdown is on top */
+  min-width: 180px; /* Reduced minimum width for dropdown */
+  visibility: hidden; /* Hide dropdown by default */
+}
+
+.help:hover .dropdown {
+  visibility: visible; /* Show dropdown on hover */
+}
+
+.dropdownLink {
+  text-decoration: none;
+  color: #000;
+  padding: 8px;
+  border-bottom: 1px solid #ddd; /* Subtle separator between items */
+  display: block; /* Ensure full width clickable area */
+  font-size: 14px; /* Smaller font size */
+}
+
+.dropdownLink:last-child {
+  border-bottom: none; /* Remove border from last item */
+}
+
+.dropdownArrow {
+  margin-left: 5px;
+  color: #007bff; /* Color for dropdown arrow */
+  font-size: 10px; /* Smaller size of the dropdown arrow */
+}

@@ -1,0 +1,771 @@
+/*HomePage.module.css */
+
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+
+/* HomePage.module.css */
+.heroBannerBackground {
+  position: relative;
+}
+
+.heroImageContainer {
+  width: 100%;
+}
+
+.heroImage {
+  width: 1350px;
+  height: 550px;
+}
+
+.heroBannerContent {
+  background: url('https://example.com/hero-banner-image.jpg') no-repeat center center/cover; /* Replace with your background image URL */
+  color: #fff;
+  text-align: center;
+  padding: 60px 5px; /* Adjust padding as needed */
+  position: relative;
+  z-index: 2;
+}
+
+.heroBannerContent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: -1; /* Place the overlay behind content */
+}
+
+.heroBannerContent h1 {
+  font-size: 3rem; /* Larger font size for the main heading */
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Subtle shadow for better readability */
+}
+
+.heroBannerContent p {
+  font-size: 1.2rem; /* Slightly larger text for readability */
+  margin-bottom: 30px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Subtle shadow for better readability */
+}
+
+.heroActions {
+  margin-bottom: 30px;
+}
+
+.ctaButton, .secondaryCtaButton {
+  background: #ff4500; /* Bright orange for the main button */
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin: 0 10px; /* Space between buttons */
+}
+
+.secondaryCtaButton {
+  background: #007bff; /* Blue for the secondary button */
+}
+
+.ctaButton:hover, .secondaryCtaButton:hover {
+  background: #ff6347; /* Darker shade on hover for the main button */
+}
+
+.secondaryCtaButton:hover {
+  background: #0056b3; /* Darker shade on hover for the secondary button */
+}
+
+.searchBar {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .heroBannerContent h1 {
+    font-size: 2.5rem; /* Smaller font size on mobile */
+  }
+
+  .heroBannerContent p {
+    font-size: 1rem; /* Smaller font size on mobile */
+  }
+}
+
+
+/* About Us Section */
+
+.aboutUs {
+  background: linear-gradient(to bottom, #f0f0f0, #d1e0e0); /* Example gradient from light gray to a soft blue-green */
+  padding: 40px 0; /* Adjust padding as needed */
+  color: #333; /* Adjust text color if needed for contrast */
+  text-align: center; /* Center-aligns text and inline elements */
+}
+
+.aboutUs h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.aboutUs p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 auto; /* Ensures any block-level elements are centered */
+  max-width: 800px; /* Optional: limits the width of the text for better readability */
+}
+
+
+.teamShowcase {
+  margin-top: 30px;
+}
+
+.teamGrid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.teamMember {
+  text-align: center;
+}
+
+.teamMember img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.teamMember h4 {
+  margin: 5px 0;
+  font-size: 1.2rem;
+}
+
+.teamMember p {
+  font-size: 1rem;
+}
+/* Shop by Category Section */
+.categories {
+  padding: 10px 20px;
+  margin: 20px 0;
+  background-color: #ff3f00;
+  border-radius: 8px;
+  color: white;
+}
+
+.flashHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.flashTitle {
+  display: flex;
+  align-items: center;
+}
+
+.flashIcon {
+  margin-right: 8px;
+}
+
+.timeLeft {
+  font-size: 1rem;
+}
+
+.seeAll {
+  font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.seeAll:hover {
+  text-decoration: underline;
+}
+
+/* Shop by Category Section */
+.categoryGrid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px; /* Reduced gap between items */
+  margin-top: 15px; /* Reduced margin for better spacing */
+  overflow-x: auto; /* Allows horizontal scrolling if items overflow */
+  max-width: 100%; /* Ensure it doesn’t exceed the container width */
+  padding: 0 10px; /* Add horizontal padding to avoid items touching the edges */
+}
+
+.categoryCard {
+  background-color: #fff;
+  color: #000;
+  padding: 10px; /* Reduced padding for a smaller card */
+  border-radius: 8px;
+  text-align: center;
+  min-width: 150px; /* Reduced minimum width for cards */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  position: relative; /* For positioning the badge and additional info */
+}
+
+/* Optional: You can add media queries to adjust the card size on different screens */
+@media (max-width: 768px) {
+  .categoryGrid {
+    gap: 8px; /* Further reduce the gap on smaller screens */
+    padding: 0 5px; /* Adjust padding for smaller screens */
+  }
+
+  .categoryCard {
+    min-width: 120px; /* Further reduce minimum width for smaller screens */
+    padding: 8px; /* Further reduce padding on smaller screens */
+  }
+}
+
+
+.categoryCard img {
+  width: 70%;
+  border-radius: 5px;
+}
+
+.categoryCard h3 {
+  margin: 10px 0;
+}
+
+.categoryCard .price {
+  font-weight: bold;
+  color: #ff3f00;
+}
+
+.categoryCard .stock {
+  color: #888;
+}
+
+/* Hover Effect */
+.categoryCard:hover {
+  transform: scale(1.05); /* Slightly zoom in */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff3f00;
+  border-radius: 4px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/* Additional Info Section */
+.additionalInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.categoryCard:hover .additionalInfo {
+  opacity: 1;
+}
+
+/* Rating Stars */
+.rating {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+
+.star {
+  color: #ff3f00;
+  margin-right: 2px;
+}
+
+/* Action Buttons */
+.quickView, .wishlistButton {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.quickView {
+  background-color: #333;
+}
+
+.wishlistButton {
+  background-color: #ff3f00;
+}
+.seeAllBtn {
+  background-color: #ff9800; /* Bright orange color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Button padding */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.seeAllBtn:hover {
+  background-color: #e68900; /* Darker orange on hover */
+  transform: translateY(-3px); /* Lift the button on hover */
+}
+
+.seeAllBtn:active {
+  background-color: #cc7a00; /* Even darker when clicked */
+  transform: translateY(0); /* Return to original position when clicked */
+}
+
+
+
+
+
+/* Featured Products Section */
+.featuredProducts {
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+.featuredProducts h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.productGrid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.productCard {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productCard img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.productCard h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.productCard p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.productButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1e90ff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.productButton:hover {
+  background-color: #1c86ee;
+}
+
+.productCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Customer Success Stories */
+.successStories {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.successStories h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.successStories p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.successGrid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.successCard {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+}
+
+.successCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.successCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.successCard p {
+  font-size: 1rem;
+}
+
+/* Blog Section */
+.blog {
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+.blog h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.blogGrid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.blogPost {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blogPost img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.blogPost h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.blogPost p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.blogPost a {
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.blogPost:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Featured Video Section */
+.featuredVideo {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.featuredVideo h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.videoWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.videoWrapper iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 10px;
+}
+
+/* FAQ Section */
+.faq {
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+.faq h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faqItem {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.faqItem h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.faqItem p {
+  font-size: 1rem;
+}
+
+/* Brand Partners Section */
+.brandPartners {
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+.brandPartners h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.brandGrid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.brandGrid img {
+  width: 150px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.testimonialGrid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.testimonialCard {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+}
+
+.testimonialCard p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.testimonialCard h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+.customerImageWrapper {
+  display: flex;
+  justify-content: center; /* Center-align the image within the wrapper */
+  margin-bottom: 10px; /* Space below the image */
+}
+
+.customerImage {
+  width: 100px; /* Set the width of the image */
+  height: 100px; /* Set the height of the image */
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+
+/* Newsletter Sign-Up */
+.newsletter {
+  padding: 50px 20px;
+  background-color: #1e90ff;
+  color: #fff;
+  text-align: center;
+}
+
+.newsletter h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.newsletter p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.newsletterForm {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.newsletterForm input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 300px;
+  font-size: 1rem;
+}
+
+.newsletterForm button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff6347;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletterForm button:hover {
+  background-color: #e5533d;
+}
+
+/* Social Media Links */
+.socialMedia {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.socialMedia h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socialIcons a {
+  display: block;
+}
+
+.socialIcons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.socialIcons img:hover {
+  transform: scale(1.2);
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerLinks {
+  margin-bottom: 10px;
+}
+
+.footerLinks a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.footerLinks a:hover {
+  text-decoration: underline;
+}

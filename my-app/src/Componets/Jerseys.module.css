@@ -1,0 +1,289 @@
+/* General container styles */
+.container {
+    padding: 30px;
+    background: linear-gradient(135deg, #0206fd, #87cefa); /* Light blue gradient */
+    background-size: 400% 400%;
+    animation: gradientBackground 20s ease infinite;
+    min-height: 100vh;
+    color: #fff;
+    font-family: 'Poppins', sans-serif; /* Sleek, modern font */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animation for the background */
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Styling the search bar with a different shape */
+.formControl {
+    width: 100%;
+    max-width: 600px;
+    padding: 14px 22px;
+    border: 2px solid #fff;
+    border-radius: 30px; /* More rounded */
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #1e1e1e;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: border-color 0.4s, box-shadow 0.4s;
+    outline: none;
+    position: relative;
+}
+
+.formControl:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.6);
+}
+
+/* Placeholder text styling */
+.formControl::placeholder {
+    color: #1e1e1e;
+    opacity: 0.7;
+}
+
+/* Clear button */
+.formControl::after {
+    content: '✖'; /* Unicode for clear button */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #1e1e1e;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Clear button hover effect */
+.formControl::after:hover {
+    color: #1e90ff;
+}
+
+
+/* Card styling for teams and jerseys */
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(30, 144, 255, 0.2);
+    border-radius: 20px;
+    transition: transform 0.5s, box-shadow 0.5s;
+    overflow: hidden;
+    padding: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #1e1e1e;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(30, 144, 255, 0.25);
+}
+
+/* Kit image styling */
+.kitImages {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.kitImageContainer {
+    text-align: center;
+    transition: transform 0.4s, filter 0.4s;
+}
+
+.kitImageContainer:hover {
+    transform: translateY(-12px);
+    filter: brightness(1.1);
+}
+
+.kitImage {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    /* Changed from circle to square */
+    border-radius: 10px; /* Adjust border-radius to a small value or 0 for sharp corners */
+    cursor: pointer;
+    transition: box-shadow 0.4s;
+    border: 2px solid #1e90ff;
+}
+
+.kitImage:hover {
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.4);
+}
+
+/* Text styling for kit names, prices, and ratings */
+.kitName {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e90ff;
+}
+
+.price, .rating, .discount, .stock {
+    font-size: 15px;
+    margin-top: 5px;
+    color: #1e1e1e;
+}
+
+.price {
+    color: #1e90ff; /* Blue color */
+}
+
+.rating {
+    color: #87cefa; /* Light blue */
+}
+
+.discount {
+    color: #ff4500; /* Bright red */
+}
+
+.stock {
+    color: #3cb371; /* Medium sea green */
+}
+
+/* Button styling */
+.addToCartBtn, .favoriteBtn {
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    padding: 12px 24px;
+    margin: 12px 0;
+    cursor: pointer;
+    transition: background-color 0.4s, transform 0.4s, box-shadow 0.4s;
+}
+
+.addToCartBtn:hover {
+    background-color: #007bb5;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 123, 181, 0.4);
+}
+
+.favoriteBtn {
+    background-color: #ff4081;
+}
+
+.favoriteBtn:hover {
+    background-color: #d81b60;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(216, 27, 96, 0.4);
+}
+
+.favorited {
+    background-color: #d81b60;
+}
+
+/* Modal styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: #f0f8ff;
+    border-radius: 25px;
+    padding: 35px;
+    width: 500px;
+    max-width: 90%;
+    position: relative;
+    animation: fadeIn 0.7s ease-in-out;
+    color: #1e1e1e;
+    box-shadow: 0 0 30px rgba(30, 144, 255, 0.4);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 26px;
+    color: #1e90ff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #4682b4;
+}
+
+.modalImage {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.modalPrice, .modalRating {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #1e90ff;
+}
+
+.modalReviews {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    color: #1e1e1e;
+}
+
+/* Booking form */
+.bookingForm {
+    margin-top: 20px;
+}
+
+.bookingForm label {
+    display: block;
+    margin: 15px 0 5px;
+    color: #1e90ff;
+    font-size: 14px;
+}
+
+.bookingForm input,
+.bookingForm select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: 2px solid #ddd;
+    background: #fff;
+    color: #1e1e1e;
+    transition: border-color 0.3s;
+}
+
+.bookingForm input:focus, .bookingForm select:focus {
+    border-color: #1e90ff;
+}
+
+.bookingForm button {
+    width: 100%;
+    padding: 14px;
+    background-color: #0b21ee;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.4s, transform 0.4s, box-shadow 0.4s;
+}
+
+.bookingForm button:hover {
+    background-color: #007bb5;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 123, 181, 0.4);
+}

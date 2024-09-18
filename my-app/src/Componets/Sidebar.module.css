@@ -1,0 +1,37 @@
+.sidebarContainer {
+    position: absolute; /* Adjust this position based on your layout */
+    top: 20px; /* Adjust positioning as needed */
+    left: 50px; /* Adjust positioning as needed */
+    width: 300px; /* Adjust width as needed */
+    z-index: 10; /* Ensure it is above other content */
+  }
+  
+  .sidebarCard {
+    background: white; /* Background color of the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Shadow for card effect */
+    padding: 20px; /* Padding inside the card */
+  }
+  
+  .list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .listItem {
+    padding: 10px; /* Space around each item */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-bottom: 1px solid #ddd; /* Separator line between items */
+  }
+  
+  .listItem:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+  }
+  
+  .cardContent {
+    padding: 10px;
+    border-top: 1px solid #ddd; /* Separator line between item and content */
+    margin-top: 10px;
+  }
+  

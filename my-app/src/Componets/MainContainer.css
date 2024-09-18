@@ -1,0 +1,16 @@
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Or any appropriate max width */
+    margin: 0 auto;
+    display: flex; /* Flexbox for layout */
+  }
+  
+  .background-image {
+    flex: 1;
+    background-image: url('/path/to/your/image.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 600px; /* Adjust as needed */
+  }
+  
