@@ -1,0 +1,38 @@
+/* JerseysPage.module.css */
+.jerseysPage {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .jerseyGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .jerseyCard {
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+  }
+  
+  .jerseyImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .jerseyDetails {
+    margin-top: 10px;
+  }
+  
+  .jerseyDetails h3 {
+    margin: 0;
+  }
+  
+  .jerseyDetails p {
+    color: #555;
+  }
+  

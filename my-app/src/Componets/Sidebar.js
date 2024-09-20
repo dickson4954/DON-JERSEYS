@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import styles from './Sidebar.module.css'; // Ensure the CSS module is correctly imported
+import { FaBars } from 'react-icons/fa';
 
 const Sidebar = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [selectedLeague, setSelectedLeague] = useState(null);
+  
 
   const handleItemClick = (item) => {
     setSelectedItem(item === selectedItem ? null : item); // Toggle item selection

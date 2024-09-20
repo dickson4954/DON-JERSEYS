@@ -18,22 +18,23 @@ body {
 
 .heroImageContainer {
   width: 100%;
+  position: relative;
 }
 
 .heroImage {
-  width: 1350px;
-  height: 550px;
+  width: 100%;
+  height: 700px;
 }
 
 .heroBannerContent {
-  background: url('https://example.com/hero-banner-image.jpg') no-repeat center center/cover; /* Replace with your background image URL */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #fff;
   text-align: center;
-  padding: 60px 5px; /* Adjust padding as needed */
-  position: relative;
   z-index: 2;
 }
-
 .heroBannerContent::before {
   content: "";
   position: absolute;
@@ -46,18 +47,18 @@ body {
 }
 
 .heroBannerContent h1 {
-  font-size: 3rem; /* Larger font size for the main heading */
+  font-size: 3rem;
   margin-bottom: 20px;
   font-weight: bold;
   letter-spacing: 1px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Subtle shadow for better readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .heroBannerContent p {
-  font-size: 1.2rem; /* Slightly larger text for readability */
+  font-size: 1.2rem;
   margin-bottom: 30px;
   line-height: 1.6;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Subtle shadow for better readability */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .heroActions {
@@ -161,14 +162,7 @@ body {
 .teamMember p {
   font-size: 1rem;
 }
-/* Shop by Category Section */
-.categories {
-  padding: 10px 20px;
-  margin: 20px 0;
-  background-color: #ff3f00;
-  border-radius: 8px;
-  color: white;
-}
+
 
 .flashHeader {
   display: flex;
@@ -204,14 +198,23 @@ body {
 }
 
 /* Shop by Category Section */
+.categories {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #ff3f00;
+  border-radius: 8px;
+  color: white;
+  overflow: hidden; /* Ensure no overflow */
+}
+
 .categoryGrid {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 10px; /* Reduced gap between items */
-  margin-top: 15px; /* Reduced margin for better spacing */
-  overflow-x: auto; /* Allows horizontal scrolling if items overflow */
-  max-width: 100%; /* Ensure it doesn’t exceed the container width */
-  padding: 0 10px; /* Add horizontal padding to avoid items touching the edges */
+  flex-wrap: wrap; /* Allows cards to wrap onto the next line */
+/* Space cards evenly */
+  justify-content: center; 
+  gap: 15px; /* Reduced gap for tighter layout */
+  margin-top: 15px;
+  padding: 0 10px;
 }
 
 .categoryCard {
@@ -225,27 +228,15 @@ body {
   position: relative; /* For positioning the badge and additional info */
 }
 
-/* Optional: You can add media queries to adjust the card size on different screens */
-@media (max-width: 768px) {
-  .categoryGrid {
-    gap: 8px; /* Further reduce the gap on smaller screens */
-    padding: 0 5px; /* Adjust padding for smaller screens */
-  }
-
-  .categoryCard {
-    min-width: 120px; /* Further reduce minimum width for smaller screens */
-    padding: 8px; /* Further reduce padding on smaller screens */
-  }
-}
-
-
 .categoryCard img {
-  width: 70%;
-  border-radius: 5px;
+  width: 100%;
+  max-width: 140px; /* Reduced image size for compact layout */
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .categoryCard h3 {
-  margin: 10px 0;
+  margin: 8px 0; /* Adjusted margin */
 }
 
 .categoryCard .price {
@@ -259,9 +250,28 @@ body {
 
 /* Hover Effect */
 .categoryCard:hover {
-  transform: scale(1.05); /* Slightly zoom in */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 768px) {
+  .categoryGrid {
+    gap: 10px; /* Reduced gap on smaller screens */
+    justify-content: center;
+  }
+
+  .categoryCard {
+    flex: 1 1 140px; /* Adjusted size for mobile */
+    max-width: 180px;
+    padding: 10px;
+  }
+
+  .categoryCard img {
+    max-width: 100px; /* Adjusted image size for smaller screens */
+  }
+}
+
+
 
 /* Badge Styles */
 .badge {
